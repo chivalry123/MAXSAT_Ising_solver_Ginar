@@ -1,0 +1,14 @@
+export ISING_GUROBI_INC=/global/homes/k/key01027/ising_solver/gurobi604/linux64/include/
+export ISING_GUROBI_LIB=/global/homes/k/key01027/ising_solver/gurobi604/linux64/lib
+export BOOST_INC=/usr/common/usg/boost/1.59/intel/include/
+export BOOST_LIB=/usr/common/usg/boost/1.59/intel/lib
+export BOOST_MPI_INC=/usr/common/usg/boost/1.59/intel/include/
+export BOOST_MPI_LIB=/usr/common/usg/boost/1.59/intel/lib
+
+#rm ising
+
+echo $ISING_GUROBI_LIB
+CC -I$ISING_GUROBI_INC -I$BOOST_INC -I$BOOST_MPI_INC -I. main.cpp tools.cpp treeofdevil.cpp solver.cpp periodicfunction.cpp -o ising  -L$ISING_GUROBI_LIB -L$BOOST_LIB -L$BOOST_MPI_LIB -lgurobi_c++ -lgurobi60  -lpthread -lm -Wall -m64  -fexceptions -frounding-math -O2 #-lboost_regex -lboost_system -lboost_mpi -lboost_serialization
+
+cp ising ../../bin/
+

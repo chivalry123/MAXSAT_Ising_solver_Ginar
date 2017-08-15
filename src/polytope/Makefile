@@ -1,0 +1,50 @@
+WORKDIR = `pwd`
+
+CC = gcc
+CXX = mpic++
+AR = ar
+LD = mpic++
+
+INC = -I$(ISING_GUROBI_INC) -I$(BOOST_INC)
+CFLAGS = -Wall -m64 -fPIE -fexceptions -frounding-math -O3 -g -fopenmp
+LIB = -L$(ISING_GUROBI_LIB) -L$(BOOST_LIB) -lgurobi_c++ -lgurobi60 -lboost_mpi -lboost_serialization -lboost_regex -fopenmp
+
+OBJDIR = obj
+OUT_FINAL = bin/polytope
+ISPATH = ../ising
+
+OBJ = $(OBJDIR)/main.o $(OBJDIR)/eval_queue.o $(OBJDIR)/polytope_solver.o $(OBJDIR)/solver.o $(OBJDIR)/periodicfunction.o $(OBJDIR)/tools.o $(OBJDIR)/treeofdevil.o
+
+all: prepare build
+
+prepare:
+	test -d bin || mkdir -p bin
+	test -d $(OBJDIR) || mkdir -p $(OBJDIR)
+
+build: $(OBJ)
+	$(LD) -o $(OUT_FINAL) $(OBJ) $(LDFLAGS) $(LIB)
+
+$(OBJDIR)/main.o: main.cpp
+	$(CXX) $(CFLAGS) $(INC) -c main.cpp -o $(OBJDIR)/main.o
+
+$(OBJDIR)/eval_queue.o: eval_queue.cpp
+	$(CXX) $(CFLAGS) $(INC) -c eval_queue.cpp -o $(OBJDIR)/eval_queue.o
+
+$(OBJDIR)/polytope_solver.o: polytope_solver.cpp
+	$(CXX) $(CFLAGS) $(INC) -c polytope_solver.cpp -o $(OBJDIR)/polytope_solver.o
+
+$(OBJDIR)/solver.o: $(ISPATH)/solver.cpp
+	$(CXX) $(CFLAGS) $(INC) -c $(ISPATH)/solver.cpp -o $(OBJDIR)/solver.o
+
+$(OBJDIR)/periodicfunction.o: $(ISPATH)/periodicfunction.cpp
+	$(CXX) $(CFLAGS) $(INC) -c $(ISPATH)/periodicfunction.cpp -o $(OBJDIR)/periodicfunction.o
+
+$(OBJDIR)/tools.o: $(ISPATH)/tools.cpp
+	$(CXX) $(CFLAGS) $(INC) -c $(ISPATH)/tools.cpp -o $(OBJDIR)/tools.o
+
+$(OBJDIR)/treeofdevil.o: $(ISPATH)/treeofdevil.cpp
+	$(CXX) $(CFLAGS) $(INC) -c $(ISPATH)/treeofdevil.cpp -o $(OBJDIR)/treeofdevil.o
+
+clean:
+	rm -f $(OBJDIR)/*
+	rm -f $(OUT_FINAL)

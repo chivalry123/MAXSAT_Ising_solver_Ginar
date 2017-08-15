@@ -1,0 +1,81 @@
+In file included from /usr/include/boost/algorithm/string/finder.hpp:23:0,
+                 from /usr/include/boost/algorithm/string/find.hpp:22,
+                 from /usr/include/boost/algorithm/string/predicate.hpp:23,
+                 from /usr/include/boost/algorithm/string.hpp:21,
+                 from polytope_solver.h:17,
+                 from polytope_solver.cpp:1:
+/usr/include/boost/algorithm/string/detail/finder.hpp: In instantiation of ‘boost::iterator_range<Iterator> boost::algorithm::detail::token_finderF<PredicateT>::operator()(ForwardIteratorT, ForwardIteratorT) const [with ForwardIteratorT = const char*; PredicateT = std::vector<std::basic_string<char> >]’:
+/usr/include/boost/algorithm/string/concept.hpp:43:28:   required from ‘void boost::algorithm::FinderConcept<FinderT, IteratorT>::constraints() [with FinderT = boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >; IteratorT = const char*]’
+/usr/include/boost/concept/detail/has_constraints.hpp:32:62:   required by substitution of ‘template<class Model> boost::concepts::detail::yes boost::concepts::detail::has_constraints_(Model*, boost::concepts::detail::wrap_constraints<Model, (& Model:: constraints)>*) [with Model = boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*>]’
+/usr/include/boost/concept/detail/has_constraints.hpp:42:5:   required from ‘const bool boost::concepts::not_satisfied<boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*> >::value’
+/usr/include/boost/concept/detail/has_constraints.hpp:45:31:   required from ‘struct boost::concepts::not_satisfied<boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*> >’
+/usr/include/boost/mpl/if.hpp:67:11:   required from ‘struct boost::mpl::if_<boost::concepts::not_satisfied<boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*> >, boost::concepts::constraint<boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*> >, boost::concepts::requirement<boost::concepts::failed************ boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*>::************> >’
+/usr/include/boost/concept/detail/general.hpp:50:8:   required from ‘struct boost::concepts::requirement_<void (*)(boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*>)>’
+/usr/include/boost/algorithm/string/iter_find.hpp:77:13:   required from ‘SequenceSequenceT& boost::algorithm::iter_split(SequenceSequenceT&, RangeT&, FinderT) [with SequenceSequenceT = std::basic_string<char>; RangeT = const char [15]; FinderT = boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >]’
+/usr/include/boost/algorithm/string/split.hpp:149:69:   required from ‘SequenceSequenceT& boost::algorithm::split(SequenceSequenceT&, RangeT&, PredicateT, boost::algorithm::token_compress_mode_type) [with SequenceSequenceT = std::basic_string<char>; RangeT = const char [15]; PredicateT = std::vector<std::basic_string<char> >]’
+polytope_solver.cpp:619:48:   required from here
+/usr/include/boost/algorithm/string/detail/finder.hpp:578:45: error: no match for call to ‘(const std::vector<std::basic_string<char> >) (const char&)’
+                             while( It2!=End && m_Pred(*It2) ) ++It2;
+                                             ^
+In file included from /usr/include/c++/4.8/algorithm:62:0,
+                 from /usr/include/boost/utility/swap.hpp:24,
+                 from /usr/include/boost/tuple/detail/tuple_basic.hpp:40,
+                 from /usr/include/boost/tuple/tuple.hpp:33,
+                 from polytope_solver.h:14,
+                 from polytope_solver.cpp:1:
+/usr/include/c++/4.8/bits/stl_algo.h: In instantiation of ‘_RandomAccessIterator std::__find_if(_RandomAccessIterator, _RandomAccessIterator, _Predicate, std::random_access_iterator_tag) [with _RandomAccessIterator = const char*; _Predicate = std::vector<std::basic_string<char> >]’:
+/usr/include/c++/4.8/bits/stl_algo.h:4465:41:   required from ‘_IIter std::find_if(_IIter, _IIter, _Predicate) [with _IIter = const char*; _Predicate = std::vector<std::basic_string<char> >]’
+/usr/include/boost/algorithm/string/detail/finder.hpp:565:74:   required from ‘boost::iterator_range<Iterator> boost::algorithm::detail::token_finderF<PredicateT>::operator()(ForwardIteratorT, ForwardIteratorT) const [with ForwardIteratorT = const char*; PredicateT = std::vector<std::basic_string<char> >]’
+/usr/include/boost/algorithm/string/concept.hpp:43:28:   required from ‘void boost::algorithm::FinderConcept<FinderT, IteratorT>::constraints() [with FinderT = boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >; IteratorT = const char*]’
+/usr/include/boost/concept/detail/has_constraints.hpp:32:62:   required by substitution of ‘template<class Model> boost::concepts::detail::yes boost::concepts::detail::has_constraints_(Model*, boost::concepts::detail::wrap_constraints<Model, (& Model:: constraints)>*) [with Model = boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*>]’
+/usr/include/boost/concept/detail/has_constraints.hpp:42:5:   required from ‘const bool boost::concepts::not_satisfied<boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*> >::value’
+/usr/include/boost/concept/detail/has_constraints.hpp:45:31:   required from ‘struct boost::concepts::not_satisfied<boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*> >’
+/usr/include/boost/mpl/if.hpp:67:11:   required from ‘struct boost::mpl::if_<boost::concepts::not_satisfied<boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*> >, boost::concepts::constraint<boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*> >, boost::concepts::requirement<boost::concepts::failed************ boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*>::************> >’
+/usr/include/boost/concept/detail/general.hpp:50:8:   required from ‘struct boost::concepts::requirement_<void (*)(boost::algorithm::FinderConcept<boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >, const char*>)>’
+/usr/include/boost/algorithm/string/iter_find.hpp:77:13:   required from ‘SequenceSequenceT& boost::algorithm::iter_split(SequenceSequenceT&, RangeT&, FinderT) [with SequenceSequenceT = std::basic_string<char>; RangeT = const char [15]; FinderT = boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >]’
+/usr/include/boost/algorithm/string/split.hpp:149:69:   required from ‘SequenceSequenceT& boost::algorithm::split(SequenceSequenceT&, RangeT&, PredicateT, boost::algorithm::token_compress_mode_type) [with SequenceSequenceT = std::basic_string<char>; RangeT = const char [15]; PredicateT = std::vector<std::basic_string<char> >]’
+polytope_solver.cpp:619:48:   required from here
+/usr/include/c++/4.8/bits/stl_algo.h:214:23: error: no match for call to ‘(std::vector<std::basic_string<char> >) (const char&)’
+    if (__pred(*__first))
+                       ^
+/usr/include/c++/4.8/bits/stl_algo.h:218:23: error: no match for call to ‘(std::vector<std::basic_string<char> >) (const char&)’
+    if (__pred(*__first))
+                       ^
+/usr/include/c++/4.8/bits/stl_algo.h:222:23: error: no match for call to ‘(std::vector<std::basic_string<char> >) (const char&)’
+    if (__pred(*__first))
+                       ^
+/usr/include/c++/4.8/bits/stl_algo.h:226:23: error: no match for call to ‘(std::vector<std::basic_string<char> >) (const char&)’
+    if (__pred(*__first))
+                       ^
+/usr/include/c++/4.8/bits/stl_algo.h:234:23: error: no match for call to ‘(std::vector<std::basic_string<char> >) (const char&)’
+    if (__pred(*__first))
+                       ^
+/usr/include/c++/4.8/bits/stl_algo.h:238:23: error: no match for call to ‘(std::vector<std::basic_string<char> >) (const char&)’
+    if (__pred(*__first))
+                       ^
+/usr/include/c++/4.8/bits/stl_algo.h:242:23: error: no match for call to ‘(std::vector<std::basic_string<char> >) (const char&)’
+    if (__pred(*__first))
+                       ^
+In file included from /usr/include/boost/range/iterator_range.hpp:13:0,
+                 from /usr/include/boost/range/as_literal.hpp:22,
+                 from /usr/include/boost/algorithm/string/trim.hpp:19,
+                 from /usr/include/boost/algorithm/string.hpp:19,
+                 from polytope_solver.h:17,
+                 from polytope_solver.cpp:1:
+/usr/include/boost/range/iterator_range_core.hpp: In instantiation of ‘SeqT boost::copy_range(const Range&) [with SeqT = char; Range = boost::iterator_range<const char*>]’:
+/usr/include/boost/algorithm/string/detail/util.hpp:97:50:   required from ‘SeqT boost::algorithm::detail::copy_iterator_rangeF<SeqT, IteratorT>::operator()(const boost::iterator_range<Iterator2T>&) const [with SeqT = char; IteratorT = const char*]’
+/usr/include/boost/iterator/transform_iterator.hpp:121:31:   required from ‘typename boost::detail::transform_iterator_base<UnaryFunc, Iterator, Reference, Value>::type::reference boost::transform_iterator<UnaryFunction, Iterator, Reference, Value>::dereference() const [with UnaryFunc = boost::algorithm::detail::copy_iterator_rangeF<char, const char*>; Iterator = boost::algorithm::split_iterator<const char*>; Reference = boost::use_default; Value = boost::use_default; typename boost::detail::transform_iterator_base<UnaryFunc, Iterator, Reference, Value>::type::reference = char]’
+/usr/include/boost/iterator/iterator_facade.hpp:514:32:   required from ‘static typename Facade::reference boost::iterator_core_access::dereference(const Facade&) [with Facade = boost::transform_iterator<boost::algorithm::detail::copy_iterator_rangeF<char, const char*>, boost::algorithm::split_iterator<const char*>, boost::use_default, boost::use_default>; typename Facade::reference = char]’
+/usr/include/boost/iterator/iterator_facade.hpp:639:67:   required from ‘boost::iterator_facade<I, V, TC, R, D>::reference boost::iterator_facade<I, V, TC, R, D>::operator*() const [with Derived = boost::transform_iterator<boost::algorithm::detail::copy_iterator_rangeF<char, const char*>, boost::algorithm::split_iterator<const char*>, boost::use_default, boost::use_default>; Value = char; CategoryOrTraversal = boost::forward_traversal_tag; Reference = char; Difference = long int; boost::iterator_facade<I, V, TC, R, D>::reference = char]’
+/usr/include/c++/4.8/bits/basic_string.tcc:90:23:   required from ‘static _CharT* std::basic_string<_CharT, _Traits, _Alloc>::_S_construct(_InIterator, _InIterator, const _Alloc&, std::input_iterator_tag) [with _InIterator = boost::transform_iterator<boost::algorithm::detail::copy_iterator_rangeF<char, const char*>, boost::algorithm::split_iterator<const char*>, boost::use_default, boost::use_default>; _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]’
+/usr/include/c++/4.8/bits/basic_string.h:1725:56:   required from ‘static _CharT* std::basic_string<_CharT, _Traits, _Alloc>::_S_construct_aux(_InIterator, _InIterator, const _Alloc&, std::__false_type) [with _InIterator = boost::transform_iterator<boost::algorithm::detail::copy_iterator_rangeF<char, const char*>, boost::algorithm::split_iterator<const char*>, boost::use_default, boost::use_default>; _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]’
+/usr/include/c++/4.8/bits/basic_string.h:1746:58:   required from ‘static _CharT* std::basic_string<_CharT, _Traits, _Alloc>::_S_construct(_InIterator, _InIterator, const _Alloc&) [with _InIterator = boost::transform_iterator<boost::algorithm::detail::copy_iterator_rangeF<char, const char*>, boost::algorithm::split_iterator<const char*>, boost::use_default, boost::use_default>; _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]’
+/usr/include/c++/4.8/bits/basic_string.tcc:229:49:   required from ‘std::basic_string<_CharT, _Traits, _Alloc>::basic_string(_InputIterator, _InputIterator, const _Alloc&) [with _InputIterator = boost::transform_iterator<boost::algorithm::detail::copy_iterator_rangeF<char, const char*>, boost::algorithm::split_iterator<const char*>, boost::use_default, boost::use_default>; _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]’
+/usr/include/boost/algorithm/string/iter_find.hpp:178:49:   required from ‘SequenceSequenceT& boost::algorithm::iter_split(SequenceSequenceT&, RangeT&, FinderT) [with SequenceSequenceT = std::basic_string<char>; RangeT = const char [15]; FinderT = boost::algorithm::detail::token_finderF<std::vector<std::basic_string<char> > >]’
+/usr/include/boost/algorithm/string/split.hpp:149:69:   required from ‘SequenceSequenceT& boost::algorithm::split(SequenceSequenceT&, RangeT&, PredicateT, boost::algorithm::token_compress_mode_type) [with SequenceSequenceT = std::basic_string<char>; RangeT = const char [15]; PredicateT = std::vector<std::basic_string<char> >]’
+polytope_solver.cpp:619:48:   required from here
+/usr/include/boost/range/iterator_range_core.hpp:643:61: error: expression list treated as compound expression in functional cast [-fpermissive]
+             return SeqT( boost::begin( r ), boost::end( r ) );
+                                                             ^
+/usr/include/boost/range/iterator_range_core.hpp:643:61: error: cast from ‘boost::range_iterator<const boost::iterator_range<const char*> >::type {aka const char*}’ to ‘char’ loses precision [-fpermissive]
+make: *** [obj/polytope_solver.o] Error 1

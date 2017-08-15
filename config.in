@@ -1,0 +1,13 @@
+MAX_SITES=16
+NUM_LOOPS=1
+MAX_POLYTOPE_ITER=10
+PREC=0.0000001
+EDIFF=0.00001
+MODE=1
+N_RAND_INIT=20
+OPT_INIT=True
+SAVE_FREQ=48
+NAME=rough
+use_new_pair_terms=100
+use_new_triplet_terms=100
+use_gradual_introduction_new_variables=1

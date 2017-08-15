@@ -1,0 +1,60 @@
+###############################################################################
+Package description:
+This package contains the generalized Ising model ground
+state solver. There are three subpackages - "ising", which is the solver
+iself, "ccls", which is a MAX-SAT solver optimized for spin-glass problems,
+and "ccls_lb", which is a modified version of the ccls solver optimized for
+this particular use case. These packages are based on the AkMAXSAT code, as
+well as the CCLS2014 code.
+
+Author: Wenxuan Huang (algorithm, code);
+	Daniil Kitchaev (code maintenance, packaging)
+
+Contact: Wenxuan Huang (key01027@mit.edu);
+	 Daniil Kitchaev (dkitch@mit.edu)
+
+Copyright: Wenxuan Huang (c) 2014 All rights reserved.
+
+###############################################################################
+Prerequisites:
+This package is tested using GCC 4.8.2, and Gurobi 5.6.3, although we expect
+that it should work fine with other versions of GCC and Gurobi as we do not
+rely on any particularly recent features introduced in either code.
+
+Installation:
+1. Set the Gurobi INCLUDE and LIB directories in the build.sh script
+2. Run the build.sh script
+
+Execution:
+The bin directory contains a number of executables - these must at all times
+be located in the same directory, so if you move them, they must all be moved
+together. The main executable is "ising", while the others are needed for
+intermediate steps in the solver.
+Thus, to run the code, copy the entire contents of the bin/ directory to the
+directory where you have the J_config.in and J_in.in files:
+    cp <ising root>/bin/* <run_dir>/
+And run the main executable:
+    cd <run_dir>/
+    ./ising
+
+Input:
+The "ising" executable assumes the presence of two files in its directory -
+"J_in.in", which contains the cluster expansion ECI's, and "J_config.in",
+which contains the setup for the solver execution. See the provided examples
+for the format of these files.
+
+Configuration (J_config.in):
+NSITES: Maximum number of sites in a unit cell to consider (default=50)
+NLOOPS: Number of lower bound optimization loops (default=4)
+LABEL: Label for the calculation (default=IS0)
+PREC: Numerical precision for the ECI's (default 1e-6)
+MODE_JPLUSMINUS: 0 - ECI's and correlations in 0/1 form (default)
+                 1 - ECI's and correlations in -1/+1 form
+MODE_SOLVER: 0 - Exact solution
+             1 - Pseudo-optimization without proof (default)
+             2 - Pseudo-optimization with proof
+MODE_VERBOSITY: 0 - Silent
+                1 - Input and output to stdout (default)
+                2 - General calculation defailts to stdout
+                3 - Every little detail to stdout
+###############################################################################
