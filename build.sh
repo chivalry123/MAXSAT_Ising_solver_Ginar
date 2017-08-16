@@ -23,13 +23,6 @@ make
 cp bin/ising ../../bin/
 cd ../../
 
-echo "------------------------------------------------------"
-echo "Building Polytope code..."
-cd src/polytope
-make clean
-make
-cp bin/polytope ../../bin/
-cd ../../
 
 echo "------------------------------------------------------"
 echo "Building MAX-SAT solvers..."

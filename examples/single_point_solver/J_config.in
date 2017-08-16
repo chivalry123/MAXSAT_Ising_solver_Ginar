@@ -1,0 +1,12 @@
+LABEL=IS0
+NSITES=4
+NLOOPS=0
+PREC=0.000000001
+MODE_JPLUSMINUS=0
+MODE_SOLVER=0
+MODE_VERBOSITY=0
+input_PRIM_output_PRIMOUT_mode=1
+use_incomplete_solver=0
+which_incomplete_solver=CCEHC
+incomplete_time_cap=100
+N_to_start_incomplete=1

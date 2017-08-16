@@ -1,0 +1,13 @@
+LABEL=IS0
+NSITES=2
+NLOOPS=0
+PREC=0.000000001
+MODE_JPLUSMINUS=1
+MODE_SOLVER=0
+MODE_VERBOSITY=0
+input_PRIM_output_PRIMOUT_mode=0
+work_with_mu=1
+scan_chemical_potential=1
+binary_x_min=0
+binary_x_max=1
+
